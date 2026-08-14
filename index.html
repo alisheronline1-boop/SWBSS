@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBHSS Syedanwala — Free English-Medium Education | NGO School Kasur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,300;9..144,0,400;9..144,0,500;9..144,1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        serif: ['Fraunces','serif'],
+        sans: ['Plus Jakarta Sans','sans-serif'],
+      },
+      colors: {
+        paper: '#FDFBF7',
+        ink: '#2C352E',
+        muted: '#8A9A8F',
+        sage: '#DDE9DE',
+        sand: '#F3E9D9',
+        mist: '#DFE8EB',
+        butter: '#F6EDC8',
+        blush: '#F1DEE0',
+        line: '#EEE5D6',
+        deep: '#5B7862'
+      },
+      boxShadow: {
+        soft: '0 12px 40px -12px rgba(44,53,46,0.08)',
+        card: '0 8px 30px -8px rgba(44,53,46,0.07)',
+        pill: '0 4px 20px -4px rgba(44,53,46,0.1)'
+      },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.5rem'
+      }
+    }
+  }
+}
+</script>
+<style>
+*{ -webkit-font-smoothing:antialiased; }
+body{ background:#FDFBF7; color:#2C352E; font-family:'Plus Jakarta Sans',sans-serif; }
+h1,h2,h3,h4{ font-family:'Fraunces',serif; letter-spacing:-0.02em; }
+.reveal{ opacity:0; transform:translateY(18px); transition: all 0.9s cubic-bezier(.16,1,.3,1); }
+.reveal.in{ opacity:1; transform:none; }
+.scrollbar-none::-webkit-scrollbar{ display:none; }
+.glass{ backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+@media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; } }
+</style>
+</head>
+<body class="relative overflow-x-hidden">
+<!-- soft blobs -->
+<div class="pointer-events-none fixed inset-0 -z-10">
+  <div class="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-[#E8EFE9]/80 blur-[70px]"></div>
+  <div class="absolute top-[30%] -right-32 w-[600px] h-[600px] rounded-full bg-[#F3E9D9]/90 blur-[80px]"></div>
+  <div class="absolute bottom-[10%] left-[20%] w-[480px] h-[480px] rounded-full bg-[#DFE8EB]/70 blur-[80px]"></div>
+</div>
+
+<!-- TOP NOTICE -->
+<div class="w-full bg-ink text-[#FDFBF7] text-[11px] tracking-[0.14em] uppercase py-2.5 px-4 flex justify-center items-center gap-3">
+  <span class="inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#A8C3AE] animate-pulse"></span> 100% Free Education — No Tuition, No Hidden Charges</span>
+  <span class="hidden md:inline opacity-30">•</span>
+  <span class="hidden md:inline opacity-70">Science Mela 2019 hosted with Khwarizmi Science Society</span>
+</div>
+
+<!-- NAV -->
+<header class="sticky top-0 z-40 pt-4 md:pt-6 px-4">
+  <div class="max-w-[1180px] mx-auto">
+    <nav class="flex items-center justify-between bg-white/80 glass rounded-full border border-line shadow-pill px-3 md:px-5 py-2.5">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-ink text-white grid place-items-center font-serif text-[15px]">S</div>
+        <div class="leading-none">
+          <div class="font-serif font-medium text-[15px] tracking-tight">SBHSS Syedanwala</div>
+          <div class="text-[10px] tracking-[0.12em] uppercase text-muted -mt-0.5">Boys Higher Secondary • Kasur</div>
+        </div>
+      </div>
+      <div class="hidden lg:flex items-center gap-1 bg-paper rounded-full p-1 border border-line">
+        <a href="#about" class="px-4 py-2 rounded-full text-[13px] hover:bg-white transition">About</a>
+        <a href="#academics" class="px-4 py-2 rounded-full text-[13px] hover:bg-white transition">Academics</a>
+        <a href="#labs" class="px-4 py-2 rounded-full text-[13px] hover:bg-white transition">Labs</a>
+        <a href="#facilities" class="px-4 py-2 rounded-full text-[13px] hover:bg-white transition">Facilities</a>
+        <a href="#gallery" class="px-4 py-2 rounded-full text-[13px] hover:bg-white transition">Gallery</a>
+        <a href="#admission" class="px-4 py-2 rounded-full text-[13px] hover:bg-white transition">Admission</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/923284949899" target="_blank" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage text-ink text-[12.5px] font-medium border border-[#C6D8C7]">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> 0328-4949899
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 md:px-5 py-2.5 rounded-full bg-ink text-white text-[12.5px] font-medium hover:bg-[#1F2721] transition">Contact</a>
+        <button id="menuBtn" class="lg:hidden w-9 h-9 rounded-full bg-paper border border-line grid place-items-center">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- mobile drawer -->
+    <div id="mobileNav" class="hidden mt-3 bg-white rounded-[24px] border border-line shadow-soft p-3 lg:hidden">
+      <div class="grid grid-cols-2 gap-2 text-[13px]">
+        <a href="#about" class="px-4 py-3 rounded-2xl bg-paper">About</a>
+        <a href="#academics" class="px-4 py-3 rounded-2xl bg-paper">Academics</a>
+        <a href="#labs" class="px-4 py-3 rounded-2xl bg-paper">Labs</a>
+        <a href="#facilities" class="px-4 py-3 rounded-2xl bg-paper">Facilities</a>
+        <a href="#gallery" class="px-4 py-3 rounded-2xl bg-paper">Gallery</a>
+        <a href="#admission" class="px-4 py-3 rounded-2xl bg-paper">Admission</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="max-w-[1180px] mx-auto px-4 md:px-6 pt-10 md:pt-16 pb-12">
+  <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-10 items-start">
+    <!-- left -->
+    <div class="reveal">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-line text-[11px] tracking-wide">
+        <span class="px-2 py-0.5 rounded-full bg-ink text-white text-[10px] tracking-widest uppercase">NGO • Non Profit</span>
+        <span class="text-muted">Village Syedanwala, Tehsil Kot Radha Kishan, Dist. Kasur</span>
+      </div>
+      <h1 class="font-serif text-[42px] md:text-[64px] leading-[0.92] mt-6 font-[380]">
+        Syedanwala Boys
+        <span class="block font-light italic text-[#6B8071]">Higher Secondary School</span>
+      </h1>
+      <p class="mt-5 text-[16px] md:text-[17px] leading-7 text-[#4A5A4E] max-w-[560px]">Free, quality <span class="font-semibold text-ink underline decoration-sage decoration-4 underline-offset-4">English-medium</span> education for deserving boys — Grades 6th to 12th, affiliated with AKU-EB — Aga Khan University Examination Board, Karachi.</p>
+
+      <div class="mt-8 grid grid-cols-3 gap-3 max-w-[520px]">
+        <div class="rounded-[20px] bg-white border border-line p-4 shadow-card">
+          <div class="text-[11px] uppercase tracking-widest text-muted">Classes</div>
+          <div class="font-serif text-[22px] mt-1">6th — 12th</div>
+          <div class="text-[11px] text-muted mt-1">Secondary & H. Secondary</div>
+        </div>
+        <div class="rounded-[20px] bg-sage/60 border border-[#C8D9CB] p-4">
+          <div class="text-[11px] uppercase tracking-widest text-[#5A7360]">Medium</div>
+          <div class="font-serif text-[22px] mt-1">English Only</div>
+          <div class="text-[11px] text-[#5A7360] mt-1">AKU-EB Board</div>
+        </div>
+        <div class="rounded-[20px] bg-sand border border-[#EADFCB] p-4">
+          <div class="text-[11px] uppercase tracking-widest text-[#8B7E6A]">Fee</div>
+          <div class="font-serif text-[22px] mt-1">100% Free</div>
+          <div class="text-[11px] text-[#8B7E6A] mt-1">Meals, Books, Uniform</div>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#admission" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-white text-[13.5px] font-medium shadow-soft hover:translate-y-[-1px] transition">
+          Apply for February Admission <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#gallery" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-line text-[13.5px] font-medium hover:bg-paper transition">
+          <i data-lucide="images" class="w-4 h-4"></i> Explore Campus Gallery
+        </a>
+      </div>
+
+      <div class="mt-10 flex items-center gap-4 text-[12px] text-muted">
+        <div class="flex -space-x-2">
+          <img src="https://i.pravatar.cc/32?img=11" class="w-8 h-8 rounded-full border-2 border-white">
+          <img src="https://i.pravatar.cc/32?img=15" class="w-8 h-8 rounded-full border-2 border-white">
+          <img src="https://i.pravatar.cc/32?img=22" class="w-8 h-8 rounded-full border-2 border-white">
+        </div>
+        <span>Trusted by 400+ families in Syedanwala & surrounding villages</span>
+      </div>
+    </div>
+
+    <!-- right visual -->
+    <div class="reveal relative">
+      <div class="relative rounded-[32px] overflow-hidden bg-white border border-line shadow-soft p-3">
+        <div class="rounded-[22px] overflow-hidden relative aspect-[4.2/4.9] bg-[#EDE6D8]">
+          <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="School building">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#2C352E]/70 via-[#2C352E]/10 to-transparent"></div>
+          <div class="absolute bottom-0 p-5 w-full">
+            <div class="bg-white/90 glass rounded-[18px] p-4 border border-white/60 shadow-card">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-[11px] tracking-widest uppercase text-muted">Location</div>
+                  <div class="font-serif text-[15px] leading-tight mt-1">Village Syedanwala,<br> Kot Radha Kishan, Kasur</div>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-ink text-white grid place-items-center"><i data-lucide="map-pin" class="w-4 h-4"></i></div>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 rounded-full bg-sage text-[11px] border border-[#C6D8C7]">Cricket Ground</span>
+                <span class="px-2.5 py-1 rounded-full bg-mist text-[11px] border border-[#C8D9E0]">Mosque</span>
+                <span class="px-2.5 py-1 rounded-full bg-sand text-[11px] border border-[#E8DDC6]">Library</span>
+                <span class="px-2.5 py-1 rounded-full bg-blush text-[11px] border border-[#E8C9CD]">Science Labs</span>
+              </div>
+            </div>
+          </div>
+          <!-- floating badge -->
+          <div class="absolute top-4 left-4 bg-white rounded-full px-3 py-2 border border-line shadow-card flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-green-600"></span>
+            <span class="text-[11px] font-medium tracking-wide uppercase">AKU-EB Affiliated</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- side cards -->
+      <div class="absolute -right-2 md:-right-6 -bottom-6 md:bottom-8 bg-white rounded-[20px] border border-line shadow-soft p-3.5 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-butter border border-[#E9DCA8] grid place-items-center"><i data-lucide="graduation-cap" class="w-5 h-5 text-[#8A7A3D]"></i></div>
+        <div>
+          <div class="text-[11px] uppercase tracking-widest text-muted">Founder</div>
+          <div class="font-serif text-[14px] font-medium leading-none mt-1">Sir Syed Baber Ali</div>
+          <div class="text-[11px] text-muted mt-0.5">Vision for free education</div>
+        </div>
+      </div>
+
+      <div class="absolute -left-3 top-[36%] hidden md:flex bg-white rounded-[18px] border border-line shadow-card p-3 items-center gap-2.5">
+        <div class="w-7 h-7 rounded-full bg-sage grid place-items-center"><i data-lucide="check" class="w-3.5 h-3.5"></i></div>
+        <span class="text-[12px] font-medium pr-1">English Language Lab</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER & VISION -->
+<section id="about" class="max-w-[1180px] mx-auto px-4 md:px-6 py-10 md:py-16">
+  <div class="grid lg:grid-cols-[0.95fr_1.2fr] gap-6">
+    <div class="reveal rounded-[28px] bg-[#EAF0EB] border border-[#C9D9CB] p-7 md:p-8 relative overflow-hidden">
+      <div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-white/60 blur-[2px]"></div>
+      <div class="relative">
+        <div class="w-12 h-12 rounded-full bg-white border border-[#C9D9CB] grid place-items-center shadow-card"><i data-lucide="quote" class="w-5 h-5 text-deep"></i></div>
+        <h3 class="font-serif text-[30px] leading-[1.05] mt-6 font-[380]">To provide free, quality English-medium education to deserving boys.</h3>
+        <p class="text-[13.5px] leading-6 text-[#51665A] mt-4">Founded by <span class="font-semibold text-ink">Sir Syed Baber Ali</span> — focusing on academic excellence, discipline, and character building for Syedanwala and surrounding villages.</p>
+        <div class="mt-8 rounded-[18px] bg-white border border-[#C9D9CB] p-4 flex gap-3">
+          <img src="https://i.pravatar.cc/100?img=60" class="w-11 h-11 rounded-full object-cover">
+          <div>
+            <div class="text-[12px] tracking-widest uppercase text-muted">Mission</div>
+            <div class="text-[13px] leading-[1.5] mt-1">Empowering youth through education, free meals, and complete support so no child is left behind due to financial barriers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal grid md:grid-cols-2 gap-4">
+      <div class="rounded-[28px] bg-white border border-line shadow-card p-6 flex flex-col">
+        <div class="flex items-center gap-2 text-[11px] tracking-widest uppercase text-muted"><span class="w-5 h-px bg-line"></span> Institute at a glance</div>
+        <div class="mt-5 space-y-4">
+          <div class="flex justify-between gap-4 py-3 border-b border-line/70"><span class="text-[12px] text-muted">Full Name</span><span class="text-[13px] font-medium text-right">Syedanwala Boys Higher Secondary School</span></div>
+          <div class="flex justify-between gap-4 py-3 border-b border-line/70"><span class="text-[12px] text-muted">Short</span><span class="text-[13px] font-medium">SBHSS Syedanwala</span></div>
+          <div class="flex justify-between gap-4 py-3 border-b border-line/70"><span class="text-[12px] text-muted">Type</span><span class="text-[13px] font-medium text-right">NGO Run • Non Profit • Boys Only</span></div>
+          <div class="flex justify-between gap-4 py-3 border-b border-line/70"><span class="text-[12px] text-muted">Board</span><span class="text-[13px] font-medium">AKU-EB Karachi</span></div>
+          <div class="flex justify-between gap-4 py-3"><span class="text-[12px] text-muted">Medium</span><span class="text-[13px] font-medium">English Medium Only</span></div>
+        </div>
+        <div class="mt-auto pt-6">
+          <div class="rounded-[16px] bg-paper border border-line p-3.5 flex items-center gap-2.5 text-[12px]"><i data-lucide="info" class="w-4 h-4 text-muted"></i> All exams under AKU-EB conceptual learning pattern.</div>
+        </div>
+      </div>
+
+      <div class="rounded-[28px] bg-ink text-[#E9EFEA] p-6 md:p-7 flex flex-col">
+        <div class="text-[11px] tracking-widest uppercase opacity-60">Why families trust us</div>
+        <h4 class="font-serif text-[22px] leading-[1.15] mt-3">Education that removes every barrier.</h4>
+        <ul class="mt-6 space-y-3 text-[13px] leading-6 opacity-90">
+          <li class="flex gap-2.5"><span class="mt-1 w-5 h-5 rounded-full bg-white/10 grid place-items-center shrink-0"><i data-lucide="check" class="w-3 h-3"></i></span> No tuition, no admission fee, no hidden charges — truly free.</li>
+          <li class="flex gap-2.5"><span class="mt-1 w-5 h-5 rounded-full bg-white/10 grid place-items-center shrink-0"><i data-lucide="check" class="w-3 h-3"></i></span> English textbooks, copies, stationery, 2 uniforms / year.</li>
+          <li class="flex gap-2.5"><span class="mt-1 w-5 h-5 rounded-full bg-white/10 grid place-items-center shrink-0"><i data-lucide="check" class="w-3 h-3"></i></span> Breakfast, lunch & tea served every day at school.</li>
+          <li class="flex gap-2.5"><span class="mt-1 w-5 h-5 rounded-full bg-white/10 grid place-items-center shrink-0"><i data-lucide="check" class="w-3 h-3"></i></span> Transport for nearby villages, clean water, school mosque.</li>
+        </ul>
+        <div class="mt-auto pt-8">
+          <div class="rounded-full bg-white/10 border border-white/10 px-4 py-2.5 flex items-center justify-between text-[12px]">
+            <span>NGO Audited & Community Run</span><span class="w-6 h-6 rounded-full bg-white text-ink grid place-items-center"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics" class="bg-white border-y border-line">
+  <div class="max-w-[1180px] mx-auto px-4 md:px-6 py-14 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+      <div>
+        <div class="inline-flex items-center gap-2 text-[11px] tracking-widest uppercase text-muted"><span class="w-8 h-px bg-line"></span> Academic Programs — 6th to 12th</div>
+        <h2 class="font-serif text-[34px] md:text-[44px] leading-[0.95] mt-4">Conceptual learning, <span class="italic font-light text-deep">AKU-EB</span> pattern.</h2>
+      </div>
+      <p class="max-w-[420px] text-[13.5px] leading-6 text-[#5A6D60]">All syllabi & assessments follow Aga Khan University Examination Board standards — critical thinking over rote learning.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-6 mt-10">
+      <!-- Secondary -->
+      <div class="reveal rounded-[28px] bg-paper border border-line p-6 md:p-7">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-sand border border-[#EADFCB] grid place-items-center"><i data-lucide="book-open" class="w-4 h-4"></i></div>
+          <div><div class="font-serif text-[18px] leading-none">Secondary Level</div><div class="text-[11px] uppercase tracking-widest text-muted mt-1">Class 6 — 10 • SSC</div></div>
+        </div>
+        <div class="grid grid-cols-2 gap-3 mt-6">
+          <div class="rounded-[18px] bg-white border border-line p-4">
+            <div class="text-[12px] font-semibold tracking-wide">SSC Science Group</div>
+            <div class="text-[11px] text-muted mt-1 leading-5">Maths, Physics, Chemistry, Biology, English, Urdu, Islamiat, Pak Studies — with lab practicals.</div>
+            <div class="mt-3 inline-flex px-2.5 py-1 rounded-full bg-sage text-[10px] tracking-widest uppercase border border-[#C6D8C7]">AKU-EB</div>
+          </div>
+          <div class="rounded-[18px] bg-white border border-line p-4">
+            <div class="text-[12px] font-semibold tracking-wide">SSC General Group</div>
+            <div class="text-[11px] text-muted mt-1 leading-5">General Science, Computer, Humanities options with conceptual board exam prep.</div>
+            <div class="mt-3 inline-flex px-2.5 py-1 rounded-full bg-mist text-[10px] tracking-widest uppercase border border-[#C8D9E0]">AKU-EB</div>
+          </div>
+        </div>
+        <div class="mt-6 rounded-[16px] bg-white border border-dashed border-[#D9D0BD] p-3.5 text-[12px] flex gap-2"><i data-lucide="flask-conical" class="w-4 h-4 shrink-0 text-muted"></i> Physics, Chemistry, Biology labs included for all SSC practicals.</div>
+      </div>
+
+      <!-- Higher Secondary -->
+      <div class="reveal rounded-[28px] bg-[#F7F5EF] border border-line p-6 md:p-7">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-ink text-white grid place-items-center"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
+          <div><div class="font-serif text-[18px] leading-none">Higher Secondary Level</div><div class="text-[11px] uppercase tracking-widest text-muted mt-1">Class 11 — 12 • HSSC</div></div>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
+          <div class="rounded-[18px] bg-white border border-line p-4 shadow-card"><div class="text-[11px] uppercase tracking-widest text-muted">HSSC</div><div class="font-medium text-[13.5px] mt-1">Pre-Medical</div><div class="text-[11px] text-muted mt-1">Bio, Chem, Physics</div></div>
+          <div class="rounded-[18px] bg-white border border-line p-4 shadow-card"><div class="text-[11px] uppercase tracking-widest text-muted">HSSC</div><div class="font-medium text-[13.5px] mt-1">Pre-Engineering</div><div class="text-[11px] text-muted mt-1">Maths, Phys, Chem</div></div>
+          <div class="rounded-[18px] bg-white border border-line p-4 shadow-card"><div class="text-[11px] uppercase tracking-widest text-muted">HSSC</div><div class="font-medium text-[13.5px] mt-1">General / ICS / I.Com</div><div class="text-[11px] text-muted mt-1">Comp, Commerce, Arts</div></div>
+        </div>
+        <div class="mt-6">
+          <div class="text-[11px] uppercase tracking-widest text-muted mb-3">Extra Programs — Inclusive</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-2 rounded-full bg-white border border-line text-[12px] flex items-center gap-1.5"><i data-lucide="languages" class="w-3.5 h-3.5"></i> English Language Lab</span>
+            <span class="px-3 py-2 rounded-full bg-white border border-line text-[12px] flex items-center gap-1.5"><i data-lucide="monitor" class="w-3.5 h-3.5"></i> Computer Skills</span>
+            <span class="px-3 py-2 rounded-full bg-white border border-line text-[12px] flex items-center gap-1.5"><i data-lucide="compass" class="w-3.5 h-3.5"></i> Career Counseling</span>
+            <span class="px-3 py-2 rounded-full bg-white border border-line text-[12px] flex items-center gap-1.5"><i data-lucide="clipboard-check" class="w-3.5 h-3.5"></i> Board Exam Preparation (AKU-EB)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LABS -->
+<section id="labs" class="max-w-[1180px] mx-auto px-4 md:px-6 py-14 md:py-20">
+  <div class="reveal flex flex-wrap items-end justify-between gap-4">
+    <h2 class="font-serif text-[34px] md:text-[44px] leading-[0.95]">Technical & Science Labs<br><span class="text-deep italic font-light">Full Mechanism — hands on</span></h2>
+    <div class="text-[12px] tracking-widest uppercase text-muted border border-line rounded-full px-4 py-2 bg-white">30+ PCs • Safety Gear • Workshop Benches</div>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+    <!-- science -->
+    <div class="reveal rounded-[26px] bg-white border border-line shadow-card p-5 flex flex-col">
+      <div class="flex items-center justify-between">
+        <div class="w-10 h-10 rounded-full bg-mist border border-[#C9DDE6] grid place-items-center"><i data-lucide="atom" class="w-5 h-5"></i></div>
+        <span class="text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-full bg-paper border border-line">SSC + HSSC</span>
+      </div>
+      <h4 class="font-serif text-[19px] mt-4">Physics, Chemistry, Biology Labs</h4>
+      <p class="text-[12.5px] leading-6 text-muted mt-2">Complete AKU-EB syllabus practicals — observation, experimentation, lab notebooks and viva preparation.</p>
+      <div class="mt-4 rounded-[16px] bg-[#F7FBFC] border border-[#D8E8ED] p-3 text-[11.5px] leading-5 text-[#2C352E]">Mechanism: Workstations with lab sinks, gas lines, fume hoods, microscopes, analytical kits, safety showers, models & charts.</div>
+    </div>
+    <!-- computer -->
+    <div class="reveal rounded-[26px] bg-white border border-line shadow-card p-5 flex flex-col">
+      <div class="flex items-center justify-between">
+        <div class="w-10 h-10 rounded-full bg-sage border border-[#C6D8C7] grid place-items-center"><i data-lucide="cpu" class="w-5 h-5"></i></div>
+        <span class="text-[10px] tracking-widest uppercase px-2.5 py-1 rounded-full bg-sage border border-[#C6D8C7] text-deep">30+ PCs • Internet</span>
+      </div>
+      <h4 class="font-serif text-[19px] mt-4">Computer Lab</h4>
+      <p class="text-[12.5px] leading-6 text-muted mt-2">Digital literacy for every boy — typing to coding basics.</p>
+      <div class="mt-4 rounded-[16px] bg-[#F1F6F1] border border-[#C6D8C7] p-3 text-[11.5px] leading-5">
+        <span class="font-medium">Includes:</span> MS Office, Scratch / Python intro, internet research, multimedia, AKU-EB computer practicals.
+        <div class="mt-2 flex gap-1.5 flex-wrap"><span class="px-2 py-1 rounded-full bg-white border border-line text-[10px]">MS Word</span><span class="px-2 py-1 rounded-full bg-white border border-line text-[10px]">Excel</span><span class="px-2 py-1 rounded-full bg-white border border-line text-[10px]">Coding</span></div>
+      </div>
+    </div>
+    <!-- mechanical -->
+    <div class="reveal rounded-[26px] bg-[#FFFBF1] border border-[#EADFCB] shadow-card p-5">
+      <div class="w-10 h-10 rounded-full bg-white border border-[#EADFCB] grid place-items-center"><i data-lucide="wrench" class="w-5 h-5"></i></div>
+      <h4 class="font-serif text-[19px] mt-4 leading-tight">Mechanical Lab — Full Mechanism</h4>
+      <p class="text-[11px] uppercase tracking-widest text-[#8B7E6A] mt-1">Engineering support • Vocational skill</p>
+      <ul class="mt-4 space-y-2 text-[12px] leading-5">
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#EADFCB] grid place-items-center shrink-0">•</span> Lathe Machine, Drilling Machine, Grinding Machine</li>
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#EADFCB] grid place-items-center shrink-0">•</span> Welding Equipment, Hand Tools (spanners, files, hammers)</li>
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#EADFCB] grid place-items-center shrink-0">•</span> Safety Gear — gloves, goggles, aprons, fire safety</li>
+      </ul>
+      <div class="mt-4 text-[11.5px] bg-white rounded-[12px] p-3 border border-[#EADFCB]">Purpose: basic machining, fitting & workshop practices for HSSC Pre-Engineering + skill trade.</div>
+    </div>
+
+    <!-- electrical -->
+    <div class="reveal rounded-[26px] bg-[#F9FBFF] border border-[#D3DEEA] shadow-card p-5">
+      <div class="w-10 h-10 rounded-full bg-white border border-[#D3DEEA] grid place-items-center"><i data-lucide="zap" class="w-5 h-5"></i></div>
+      <h4 class="font-serif text-[19px] mt-4 leading-tight">Electrical Lab — Full Mechanism</h4>
+      <p class="text-[11px] uppercase tracking-widest text-[#6B7E90] mt-1">For ICS & Pre-Engineering</p>
+      <ul class="mt-4 space-y-2 text-[12px] leading-5">
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#D3DEEA] grid place-items-center shrink-0">•</span> DC/AC Power Supply Units, Multimeters, Oscilloscope</li>
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#D3DEEA] grid place-items-center shrink-0">•</span> Circuit Boards, Wiring Panels, Motors, Transformers</li>
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#D3DEEA] grid place-items-center shrink-0">•</span> Electrical Safety Kits, earth testing, MCB panels</li>
+      </ul>
+      <div class="mt-4 text-[11.5px] bg-white rounded-[12px] p-3 border border-[#D3DEEA]">Purpose: hands-on circuit design, house wiring, motor control & troubleshooting.</div>
+    </div>
+
+    <!-- wood -->
+    <div class="reveal rounded-[26px] bg-[#FDF6EE] border border-[#EADDCB] shadow-card p-5">
+      <div class="w-10 h-10 rounded-full bg-white border border-[#EADDCB] grid place-items-center"><i data-lucide="hammer" class="w-5 h-5"></i></div>
+      <h4 class="font-serif text-[19px] mt-4 leading-tight">Wood Workshop Lab</h4>
+      <p class="text-[11px] uppercase tracking-widest text-[#8A7862] mt-1">Vocational • Furniture Making</p>
+      <ul class="mt-4 space-y-2 text-[12px] leading-5">
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#EADDCB] grid place-items-center shrink-0">•</span> Wood Cutting Machine, Planer, Sander, Drill Press</li>
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#EADDCB] grid place-items-center shrink-0">•</span> Carpentry Hand Tools + sturdy workbenches</li>
+        <li class="flex gap-2"><span class="w-5 h-5 rounded-full bg-white border border-[#EADDCB] grid place-items-center shrink-0">•</span> Measuring & marking tools, safety clamps</li>
+      </ul>
+      <div class="mt-4 text-[11.5px] bg-white rounded-[12px] p-3 border border-[#EADDCB]">Purpose: wood cutting, joining, finishing & small furniture projects.</div>
+    </div>
+
+    <!-- special note -->
+    <div class="reveal rounded-[26px] bg-ink text-[#E9EFEA] p-6 flex flex-col justify-between">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-[10px] tracking-widest uppercase"><i data-lucide="sparkles" class="w-3 h-3"></i> Special Note • 2019</div>
+        <h4 class="font-serif text-[22px] leading-[1.1] mt-5">Science Mela 2019 with Khwarizmi Science Society</h4>
+        <p class="text-[12.5px] leading-6 opacity-80 mt-3">School successfully hosted an open science fair — hands-on experiments, student models, and community participation from Kot Radha Kishan.</p>
+      </div>
+      <div class="mt-6 rounded-[14px] bg-white/10 border border-white/10 p-3 flex items-center gap-2 text-[12px]"><i data-lucide="users" class="w-4 h-4"></i> 300+ visitors • Live experiments • Certificates</div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities" class="bg-white border-y border-line">
+  <div class="max-w-[1180px] mx-auto px-4 md:px-6 py-14 md:py-20">
+    <div class="flex items-center gap-3 reveal">
+      <div class="w-10 h-10 rounded-full bg-ink text-white grid place-items-center"><i data-lucide="gift" class="w-5 h-5"></i></div>
+      <h2 class="font-serif text-[32px] md:text-[40px] leading-none">Other Facilities — <span class="italic font-light text-deep">Completely FREE</span></h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+      <!-- item -->
+      <div class="reveal rounded-[22px] bg-paper border border-line p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-line grid place-items-center"><i data-lucide="badge-percent" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">100% Free Education</div>
+        <div class="text-[12px] text-muted mt-1 leading-5">No tuition fee, no admission fee, no monthly charges.</div>
+      </div>
+      <div class="reveal rounded-[22px] bg-paper border border-line p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-line grid place-items-center"><i data-lucide="book-copy" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">Free English Textbooks, Copies & Stationery</div>
+        <div class="text-[12px] text-muted mt-1 leading-5">All books, notebooks, pencils provided each term.</div>
+      </div>
+      <div class="reveal rounded-[22px] bg-paper border border-line p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-line grid place-items-center"><i data-lucide="shirt" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">Free Uniform — 2 Sets per Year</div>
+        <div class="text-[12px] text-muted mt-1 leading-5">Stitched, clean uniforms distributed annually.</div>
+      </div>
+      <div class="reveal rounded-[22px] bg-sage/50 border border-[#C6D8C7] p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-[#C6D8C7] grid place-items-center"><i data-lucide="soup" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">Free Meals — Breakfast, Lunch & Tea</div>
+        <div class="text-[12px] text-[#55695C] mt-1 leading-5">Nutritious daily meals so children can focus on studies.</div>
+      </div>
+      <div class="reveal rounded-[22px] bg-paper border border-line p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-line grid place-items-center"><i data-lucide="library" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">English Library</div>
+        <div class="text-[12px] text-muted mt-1 leading-5">Storybooks, reference, AKU-EB guides, reading corners.</div>
+      </div>
+      <div class="reveal rounded-[22px] bg-paper border border-line p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-line grid place-items-center"><i data-lucide="trophy" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">Sports Ground — Cricket, Football</div>
+        <div class="text-[12px] text-muted mt-1 leading-5">Daily games, Sports Day & inter-village matches.</div>
+      </div>
+      <div class="reveal rounded-[22px] bg-paper border border-line p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-line grid place-items-center"><i data-lucide="bus" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">Transport for Nearby Villages</div>
+        <div class="text-[12px] text-muted mt-1 leading-5">Safe pick & drop for deserving students.</div>
+      </div>
+      <div class="reveal rounded-[22px] bg-paper border border-line p-5">
+        <div class="w-9 h-9 rounded-full bg-white border border-line grid place-items-center"><i data-lucide="droplets" class="w-4 h-4"></i></div>
+        <div class="font-medium text-[14px] mt-4">Clean Water & School Mosque</div>
+        <div class="text-[12px] text-muted mt-1 leading-5">Filtered drinking water and on-campus mosque.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="max-w-[1180px] mx-auto px-4 md:px-6 py-14 md:py-20">
+  <div class="reveal flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <div class="inline-flex items-center gap-2 text-[11px] tracking-widest uppercase text-muted"><span class="w-8 h-px bg-line"></span> Organized in Folders — Updated Regularly</div>
+      <h2 class="font-serif text-[34px] md:text-[44px] leading-[0.95] mt-3">Photos & Videos Gallery</h2>
+    </div>
+    <div class="text-[12px] text-muted max-w-[320px] leading-5">Browse campus, labs, events, student life and video messages. Tap any folder to explore — lightbox view included.</div>
+  </div>
+
+  <div class="reveal mt-8 flex flex-wrap gap-2 p-2 rounded-full bg-white border border-line shadow-pill w-fit max-w-full overflow-x-auto scrollbar-none">
+    <button data-folder="campus" class="folder-btn px-5 py-2.5 rounded-full text-[13px] font-medium bg-ink text-white transition">Folder 1: Campus</button>
+    <button data-folder="labs" class="folder-btn px-5 py-2.5 rounded-full text-[13px] font-medium hover:bg-paper transition">Folder 2: Labs</button>
+    <button data-folder="events" class="folder-btn px-5 py-2.5 rounded-full text-[13px] font-medium hover:bg-paper transition">Folder 3: Events</button>
+    <button data-folder="studentlife" class="folder-btn px-5 py-2.5 rounded-full text-[13px] font-medium hover:bg-paper transition">Folder 4: Student Life</button>
+    <button data-folder="videos" class="folder-btn px-5 py-2.5 rounded-full text-[13px] font-medium hover:bg-paper transition flex items-center gap-1.5"><i data-lucide="play-circle" class="w-4 h-4"></i> Folder 5: Videos</button>
+  </div>
+
+  <div id="galleryGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mt-6"></div>
+
+  <div class="mt-6 rounded-[18px] bg-white border border-dashed border-line p-4 flex items-center justify-between gap-4 text-[12px]">
+    <div class="flex items-center gap-2"><i data-lucide="refresh-ccw" class="w-4 h-4 text-muted"></i> Gallery will be updated regularly with new photos and videos.</div>
+    <span class="hidden md:inline-flex text-[11px] tracking-widest uppercase text-muted">SBHSS Syedanwala • Kasur</span>
+  </div>
+</section>
+
+<!-- ADMISSION & CONTACT -->
+<section class="bg-[#EFE9D9]/60 border-y border-line">
+  <div class="max-w-[1180px] mx-auto px-4 md:px-6 py-12 md:py-20 grid lg:grid-cols-[0.95fr_1.05fr] gap-8">
+    <!-- admission -->
+    <div id="admission" class="reveal rounded-[28px] bg-white border border-line shadow-card p-6 md:p-8">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-ink text-white grid place-items-center"><i data-lucide="calendar-days" class="w-5 h-5"></i></div>
+        <div><div class="font-serif text-[22px] leading-none">Admission Information</div><div class="text-[11px] uppercase tracking-widest text-muted mt-1">February Every Year • Free</div></div>
+      </div>
+
+      <div class="mt-8 grid sm:grid-cols-2 gap-4">
+        <div class="rounded-[18px] bg-paper border border-line p-4">
+          <div class="text-[11px] uppercase tracking-widest text-muted">Admission Period</div>
+          <div class="font-serif text-[17px] mt-1">February Every Year</div>
+          <div class="text-[11px] text-muted mt-1">Walk-in to campus office 8 AM – 2 PM</div>
+        </div>
+        <div class="rounded-[18px] bg-sage/60 border border-[#C6D8C7] p-4">
+          <div class="text-[11px] uppercase tracking-widest text-[#5A7360]">Fee Structure</div>
+          <div class="font-serif text-[17px] mt-1">Completely FREE</div>
+          <div class="text-[11px] text-[#5A7360] mt-1">No admission, no monthly, no hidden charges</div>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <div class="text-[11px] uppercase tracking-widest text-muted mb-2">Eligibility</div>
+        <div class="rounded-[16px] bg-paper border border-line p-3.5 text-[12.5px] leading-6 flex gap-2"><i data-lucide="users-round" class="w-4 h-4 shrink-0 mt-0.5 text-muted"></i> Boys from Syedanwala and nearby villages. Priority for deserving students facing financial barriers.</div>
+      </div>
+
+      <div class="mt-6">
+        <div class="text-[11px] uppercase tracking-widest text-muted mb-3">Required Documents</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-2 rounded-full bg-white border border-line text-[12px]">B-Form</span>
+          <span class="px-3 py-2 rounded-full bg-white border border-line text-[12px]">2 Passport Size Photos</span>
+          <span class="px-3 py-2 rounded-full bg-white border border-line text-[12px]">Previous Result Card</span>
+        </div>
+      </div>
+
+      <div class="mt-8 flex gap-3">
+        <a href="https://wa.me/923284949899?text=Assalamualaikum%20SBHSS%20Syedanwala%20admission%20inquiry" target="_blank" class="flex-1 inline-flex justify-center items-center gap-2 py-3 rounded-full bg-ink text-white text-[13px] font-medium"><i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Admission Desk</a>
+        <a href="tel:+923284949899" class="w-12 h-12 rounded-full bg-paper border border-line grid place-items-center"><i data-lucide="phone" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+
+    <!-- contact -->
+    <div id="contact" class="reveal rounded-[28px] bg-ink text-[#EAEFEA] p-6 md:p-8 relative overflow-hidden flex flex-col">
+      <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between gap-4">
+          <h3 class="font-serif text-[26px] leading-[1.05]">Contact & Location</h3>
+          <span class="text-[11px] tracking-widest uppercase px-3 py-1.5 rounded-full bg-white/10 border border-white/15">Mon – Sat • 8:00 AM – 2:00 PM</span>
+        </div>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4 text-[13px]">
+          <div class="rounded-[18px] bg-white/10 border border-white/10 p-4">
+            <div class="text-[11px] uppercase tracking-widest opacity-60">Address</div>
+            <div class="leading-6 mt-2">Syedanwala Boys Higher Secondary School, Village Syedanwala, Tehsil Kot Radha Kishan, District Kasur, Punjab, Pakistan</div>
+            <a href="https://www.google.com/maps/search/Syedanwala+Kasur" target="_blank" class="mt-3 inline-flex items-center gap-1.5 text-[12px] underline underline-offset-4 opacity-80 hover:opacity-100"><i data-lucide="external-link" class="w-3.5 h-3.5"></i> Open Google Map</a>
+          </div>
+          <div class="space-y-3">
+            <a href="tel:+923284949899" class="rounded-[18px] bg-white text-ink p-4 flex items-center justify-between gap-3">
+              <div><div class="text-[11px] uppercase tracking-widest text-muted">Phone / WhatsApp</div><div class="font-medium mt-1">0328-4949899</div></div>
+              <div class="w-9 h-9 rounded-full bg-paper border border-line grid place-items-center"><i data-lucide="phone" class="w-4 h-4"></i></div>
+            </a>
+            <div class="rounded-[18px] bg-white/10 border border-white/10 p-4 flex items-center justify-between gap-3">
+              <div><div class="text-[11px] uppercase tracking-widest opacity-60">Email</div><div class="font-medium mt-1">alisheronline1@gmail.com</div></div>
+              <button onclick="navigator.clipboard.writeText('alisheronline1@gmail.com'); showToast('Email copied')" class="w-9 h-9 rounded-full bg-white text-ink grid place-items-center"><i data-lucide="copy" class="w-4 h-4"></i></button>
+            </div>
+            <div class="rounded-[18px] bg-white/5 border border-white/10 p-3 flex items-center gap-2 text-[11px]"><span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span> Office timings: 8:00 AM to 2:00 PM, Monday to Saturday</div>
+          </div>
+        </div>
+
+        <div class="mt-5 rounded-[18px] overflow-hidden border border-white/15 bg-white">
+          <iframe class="w-full h-[220px] grayscale-[0.2]" loading="lazy" src="https://maps.google.com/maps?q=Syedanwala%20Kasur&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="max-w-[1180px] mx-auto px-4 md:px-6 py-10">
+  <div class="flex flex-col md:flex-row justify-between gap-6 items-start md:items-center border-t border-line pt-8">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-ink text-white grid place-items-center font-serif">S</div>
+      <div>
+        <div class="font-serif text-[15px]">SBHSS Syedanwala</div>
+        <div class="text-[11px] text-muted tracking-wide">© 2026 Non Profit NGO • Free Education for Boys • AKU-EB Karachi</div>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-2 text-[11px]">
+      <span class="px-3 py-1.5 rounded-full bg-white border border-line">English Medium Only</span>
+      <span class="px-3 py-1.5 rounded-full bg-white border border-line">6th to 12th Grade</span>
+      <span class="px-3 py-1.5 rounded-full bg-sage border border-[#C6D8C7]">Village Syedanwala, Kasur</span>
+    </div>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[100] hidden bg-[#1A221C]/80 backdrop-blur-[12px] p-4 md:p-10">
+  <button id="closeLightbox" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white text-ink grid place-items-center"><i data-lucide="x" class="w-5 h-5"></i></button>
+  <div class="h-full w-full grid place-items-center">
+    <div class="max-w-5xl w-full">
+      <img id="lightboxImg" class="w-full max-h-[76vh] object-contain rounded-[20px] shadow-soft hidden">
+      <div id="lightboxVideo" class="hidden rounded-[20px] overflow-hidden bg-black aspect-video grid place-items-center text-white p-10 text-center">
+        <div>
+          <div class="w-16 h-16 rounded-full bg-white/10 mx-auto grid place-items-center mb-4"><i data-lucide="play" class="w-7 h-7"></i></div>
+          <div class="font-serif text-[22px]">Video Preview</div>
+          <div id="lightboxVideoTitle" class="text-[13px] opacity-70 mt-2"></div>
+          <div class="text-[11px] mt-6 opacity-60">Video files will be linked here — Founder Message: Sir Syed Baber Ali, Lab Demos, Testimonials, Drone View.</div>
+        </div>
+      </div>
+      <div class="mt-4 flex items-center justify-between text-white">
+        <div id="lightboxCaption" class="text-[13px] opacity-80"></div>
+        <div class="text-[11px] tracking-widest uppercase opacity-50">SBHSS Syedanwala Gallery</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-ink text-white px-5 py-3 rounded-full text-[12px] shadow-soft opacity-0 pointer-events-none transition">Copied</div>
+
+<script>
+lucide.createIcons();
+
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+menuBtn?.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
+
+// gallery data
+const galleryData = {
+  campus: [
+    { title:'Main Gate — Morning Assembly', tag:'Campus', src:'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop' },
+    { title:'Building Exterior', tag:'Campus', src:'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop' },
+    { title:'Classrooms — English Medium', tag:'Campus', src:'https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?q=80&w=800&auto=format&fit=crop' },
+    { title:'Assembly Ground', tag:'Campus', src:'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop' },
+    { title:'School Mosque', tag:'Campus', src:'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=800&auto=format&fit=crop' },
+    { title:'Clean Corridors & Library Entry', tag:'Campus', src:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop' },
+  ],
+  labs: [
+    { title:'Physics Lab — Practicals', tag:'Physics', src:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop' },
+    { title:'Chemistry Lab — AKU-EB', tag:'Chemistry', src:'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop' },
+    { title:'Biology Lab — Microscopes', tag:'Biology', src:'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop' },
+    { title:'Computer Lab — 30+ PCs', tag:'Computer', src:'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop' },
+    { title:'Mechanical Lab — Lathe in Action', tag:'Mechanical', src:'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop' },
+    { title:'Electrical Lab — Wiring Panels', tag:'Electrical', src:'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop' },
+    { title:'Wood Workshop — Carpentry', tag:'Woodwork', src:'https://images.unsplash.com/photo-1416339442236-8ceb164046f8?q=80&w=800&auto=format&fit=crop' },
+    { title:'Lab Safety Gear Briefing', tag:'Safety', src:'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop' },
+  ],
+  events: [
+    { title:'Science Mela 2019 — Khwarizmi Science Society', tag:'Science Mela', src:'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop' },
+    { title:'Annual Prize Distribution', tag:'Prize Day', src:'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop' },
+    { title:'Sports Day — Cricket Final', tag:'Sports', src:'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=800&auto=format&fit=crop' },
+    { title:'Independence Day & National Events', tag:'National', src:'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=800&auto=format&fit=crop' },
+    { title:'Science Models Exhibition', tag:'Science Mela', src:'https://images.unsplash.com/photo-1503676382389-4809596d5290?q=80&w=800&auto=format&fit=crop' },
+  ],
+  studentlife: [
+    { title:'Classroom Activities — English', tag:'Learning', src:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop' },
+    { title:'Cricket — Sports Ground', tag:'Cricket', src:'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=800&auto=format&fit=crop' },
+    { title:'Football Evening', tag:'Football', src:'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=800&auto=format&fit=crop' },
+    { title:'Free Meal Service — Lunch', tag:'Free Meals', src:'https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=800&auto=format&fit=crop' },
+    { title:'Uniform Distribution — 2 Sets/Year', tag:'Uniform', src:'https://images.unsplash.com/photo-1627556704302-624286467c65?q=80&w=800&auto=format&fit=crop' },
+    { title:'Library Reading Hour', tag:'Library', src:'https://images.unsplash.com/photo-1526243741027-d5585c4e06d4?q=80&w=800&auto=format&fit=crop' },
+  ],
+  videos: [
+    { title:'Founder Message: Sir Syed Baber Ali', tag:'Founder', isVideo:true, src:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop' },
+    { title:'Lab Demonstrations — Physics & Electrical', tag:'Labs', isVideo:true, src:'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop' },
+    { title:'Student Testimonials — Life at SBHSS', tag:'Testimonials', isVideo:true, src:'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop' },
+    { title:'Campus Drone View — Syedanwala', tag:'Campus', isVideo:true, src:'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop' },
+  ]
+};
+
+const grid = document.getElementById('galleryGrid');
+const btns = document.querySelectorAll('.folder-btn');
+let activeFolder = 'campus';
+
+function render(folder){
+  grid.innerHTML = '';
+  galleryData[folder].forEach((item,i)=>{
+    const el = document.createElement('button');
+    el.className = 'group text-left rounded-[22px] overflow-hidden bg-white border border-line shadow-card hover:shadow-soft transition relative';
+    el.innerHTML = `
+      <div class="aspect-[4/3] relative overflow-hidden bg-paper">
+        <img src="${item.src}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-transparent opacity-60"></div>
+        ${item.isVideo ? `<span class="absolute inset-0 grid place-items-center"><span class="w-12 h-12 rounded-full bg-white/90 backdrop-blur grid place-items-center shadow-card"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v14l11-7-11-7z"/></svg></span></span>` : ''}
+        <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 border border-white text-[10px] tracking-widest uppercase">${item.tag}</span>
+      </div>
+      <div class="p-3.5">
+        <div class="text-[13px] leading-[1.35] font-medium line-clamp-2">${item.title}</div>
+        <div class="text-[11px] text-muted mt-1 flex items-center gap-1"><span class="w-3 h-px bg-line"></span> SBHSS • ${folder}</div>
+      </div>
+    `;
+    el.addEventListener('click', ()=> openLightbox(item));
+    grid.appendChild(el);
+  });
+  lucide.createIcons();
+}
+function setActive(folder){
+  activeFolder = folder;
+  btns.forEach(b=>{
+    if(b.dataset.folder===folder){ b.className='folder-btn px-5 py-2.5 rounded-full text-[13px] font-medium bg-ink text-white transition'; }
+    else{ b.className='folder-btn px-5 py-2.5 rounded-full text-[13px] font-medium hover:bg-paper transition bg-white border border-line'; }
+  });
+  render(folder);
+}
+btns.forEach(b=> b.addEventListener('click', ()=> setActive(b.dataset.folder)));
+setActive('campus');
+
+// lightbox
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lightboxImg');
+const lbVideo = document.getElementById('lightboxVideo');
+const lbVideoTitle = document.getElementById('lightboxVideoTitle');
+const lbCap = document.getElementById('lightboxCaption');
+function openLightbox(item){
+  if(item.isVideo){
+    lbImg.classList.add('hidden');
+    lbVideo.classList.remove('hidden');
+    lbVideoTitle.textContent = item.title;
+  }else{
+    lbVideo.classList.add('hidden');
+    lbImg.classList.remove('hidden');
+    lbImg.src = item.src;
+  }
+  lbCap.textContent = item.title + ' • ' + item.tag;
+  lightbox.classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+document.getElementById('closeLightbox').addEventListener('click', closeLb);
+lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLb(); });
+function closeLb(){ lightbox.classList.add('hidden'); document.body.style.overflow=''; }
+window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLb(); });
+
+// reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+// toast
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.opacity='1';
+  t.style.transform='translate(-50%,0)';
+  setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translate(-50%,12px)'; }, 2200);
+}
+
+// smooth scroll for nav links (with mobile close)
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const id = a.getAttribute('href');
+    if(id.length>1){
+      e.preventDefault();
+      document.querySelector(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+      mobileNav?.classList.add('hidden');
+    }
+  });
+});
+</script>
+</body>
+</html>
